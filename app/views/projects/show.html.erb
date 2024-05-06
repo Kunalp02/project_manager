@@ -1,0 +1,25 @@
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+
+
+<h2>Tasks</h2>
+<% if @project.tasks.empty? %>
+  <p class 'btn-primary'>No tasks yet. <%= link_to 'Add a Task', new_project_task_path(@project) %></p>
+<% else %>
+  <ul>
+    <% @project.tasks.each do |task| %>
+      <li><%= task.name %></li>
+    <% end %>
+  </ul>
+  <%= link_to 'Add a Task', new_project_task_path(@project) %>
+<% end %>

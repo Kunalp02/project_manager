@@ -1,0 +1,4 @@
+<h1 class="task-name"><%= @task.name %></h1>
+<p class="task-description"><strong>Description:</strong> <%= @task.description %></p>
+<p class="task-due-date"><strong>Due Date:</strong> <%= @task.due_date %></p>
+<%= link_to 'Back', project_tasks_path(@project), class: "btn btn-back" %>
